@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { TextField, Button } from '@mui/material';
+import { Sun } from 'lucide-react';
 export default function WeatherInfo() {
     const [city, setCity] = useState('');
     const [weather, setWeather] = useState<WeatherResponse | null>(null);
@@ -69,7 +70,7 @@ export default function WeatherInfo() {
                 </Button>
             </div>
             <div className='mt-8'>
-                <h2 className='mb-2 text-[24px] font-semibold'>Weather data:</h2>
+                <h2 className='mb-2 text-[24px] font-semibold flex items-center'><Sun className='mr-2' /> Weather data:</h2>
                 <p>Temperature: <span className='font-bold'>{weather?.main.temp}°</span></p>
                 <p>Feels like: <span className='font-bold'>{weather?.main.feels_like}°</span></p>
                 <p>Max temperature: <span className='font-bold'>{weather?.main.temp_max}°</span></p>
